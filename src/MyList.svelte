@@ -9,4 +9,4 @@ export let array = [
     {  name: 'Mango' },
     {  name: 'Watermelon' },
     {  name: 'Yuzu' },
-    ];
+];

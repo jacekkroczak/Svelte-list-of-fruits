@@ -8,7 +8,9 @@
         <h1>Svelte - List of fruits</h1>
       </div>
     </div>
-	  <JkList/>
+    <div class="container">
+	    <JkList/>
+    </div>
 </main>
 
 <style>
