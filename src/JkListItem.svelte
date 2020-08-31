@@ -20,6 +20,7 @@
 
       img {
         width: 220px;
+        height: 170px;
       }
 </style>
 	{#each myArray as item, index}
