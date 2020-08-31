@@ -24,6 +24,7 @@
 </style>
 	{#each myArray as item, index}
 		<li>name: {item.name}, id: {index + 1}
+            <!-- svelte-ignore a11y-missing-attribute -->
             <img src="/assets/{item.name}.jpg"/>
         </li>
 	{/each}
