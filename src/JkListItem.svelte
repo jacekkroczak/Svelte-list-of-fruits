@@ -1,5 +1,5 @@
 <script>
-    import MyList, { array } from './MyList.svelte';
+    import { array } from './MyList.svelte';
 
     const myArray = []
     
