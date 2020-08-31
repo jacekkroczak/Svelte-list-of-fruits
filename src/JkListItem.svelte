@@ -1,21 +1,12 @@
 <script>
-    let fruits = [   
-    {  name: 'Apple' },
-    {  name: 'Banana' },
-    {  name: 'Cherry' },
-    {  name: 'Coconut' },
-    {  name: 'Cranberry' },
-    {  name: 'Strawberry' },
-    {  name: 'Lemon' },
-    {  name: 'Mango' },
-    {  name: 'Watermelon' },
-    {  name: 'Yuzu' },
-];
+    import MyList, { array } from './MyList.svelte';
 
-    console.log('fruits', {fruits})
+    const myArray = []
     
-    firstUpdated() {
-        console.log('dupa')
+    for (let i = 0; i < 1000; i++) {
+    const index = Math.floor(Math.random() * array.length);
+    const itemFruit = array[index];
+    myArray.push(itemFruit);
     }
 
 </script>
@@ -31,9 +22,8 @@
         width: 220px;
       }
 </style>
-
-	{#each fruits as item, i (item)}
-		<li>name: {item.name}, id: {i+1}
-            <img src="/{item.name}.jpg" />
+	{#each myArray as item, index}
+		<li>name: {item.name}, id: {index + 1}
+            <img src="/assets/{item.name}.jpg"/>
         </li>
 	{/each}

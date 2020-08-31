@@ -2,17 +2,6 @@
 	import JkList from './JkList.svelte';
 </script>
 
-<main>
-	<div class="container">
-      <div class="title">
-        <h1>Svelte - List of fruits</h1>
-      </div>
-    </div>
-    <div class="container">
-	    <JkList/>
-    </div>
-</main>
-
 <style>
 	* {
       font-family: 'Montserrat', sans-serif;
@@ -26,3 +15,15 @@
         padding: 0 20px;
     }
 </style>
+
+<main>
+	<div class="container">
+      <div class="title">
+        <h1>Svelte - List of fruits</h1>
+      </div>
+    </div>
+    <div class="container">
+	    <JkList/>
+    </div>
+</main>
+
