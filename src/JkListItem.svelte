@@ -1,13 +1,4 @@
 <script>
-    import { array } from './MyList.svelte';
-
-    const myArray = []
-    
-    for (let i = 0; i < 1000; i++) {
-    const index = Math.floor(Math.random() * array.length);
-    const itemFruit = array[index];
-    myArray.push(itemFruit);
-    }
 
 </script>
 
@@ -23,9 +14,8 @@
         height: 170px;
       }
 </style>
-	{#each myArray as item, index}
-		<li>name: {item.name}, id: {index + 1}
+	
+		<li>name: {$$props.name}, id: {$$props.index + 1}
             <!-- svelte-ignore a11y-missing-attribute -->
-            <img src="/assets/{item.name}.jpg"/>
+            <img src="/assets/{$$props.name}.jpg"/>
         </li>
-	{/each}
