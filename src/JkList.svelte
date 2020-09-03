@@ -4,12 +4,13 @@
 
     let fruits = [];
     
-    for (let i = 0; i < 1000; i++) {
-    const index = Math.floor(Math.random() * array.length);
-    const itemFruit = array[index];
-    fruits.push(itemFruit);
+    for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < array.length; i++) {
+        let itemFruit = array[i];
+        fruits.push(itemFruit);
+        }
     }
-
+    
     console.log('array', fruits);
 </script>
 
