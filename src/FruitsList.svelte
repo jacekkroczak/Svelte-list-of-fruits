@@ -1,5 +1,5 @@
 <script context="module">
-    export const array = [
+    export const basicFruits = [
         {  name: 'Apple' },
         {  name: 'Banana' },
         {  name: 'Cherry' },

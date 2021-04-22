@@ -3,16 +3,13 @@
 </script>
 
 <style>
-	* {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-    }
-    
     .container {
-        display: flex;
-        justify-content: center;
-        flex: 1;
-        padding: 0 20px;
+      display: block;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
     }
 </style>
 
