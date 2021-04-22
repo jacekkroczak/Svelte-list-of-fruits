@@ -5,12 +5,13 @@
     import { afterUpdate } from 'svelte';
 
     let fruits = [];
-    let filterFruits = [];
+    let standardFruits = [];
+    let filteredFruits = [];
     let search;
     let inputValue;
 
     afterUpdate(() => {
-        if (filterFruits.length === 0 && fruits.length === 0) {
+        if (standardFruits.length === 0 && fruits.length === 0) {
             _renderElements();
         }
 	});
@@ -23,13 +24,12 @@
                 fruits.push(itemFruit);
             }
         }
-        filterFruits = fruits;
+        standardFruits = fruits;
     }
 
     function _filterFruits(event) {
-        console.log('xd', event.target);
         let filterValues = event.target.value;
-        filterFruits.sort((a, b) => {
+        standardFruits.sort((a, b) => {
 
             if (filterValues === 'filterAZ' && a.name < b.name) {
                 return -1;
@@ -47,21 +47,21 @@
                 return 0;
             }
         })
-        console.log('rrrr')
-        // requestupdate
+        filteredFruits = standardFruits;
   }
 
   function _resetFruits() {
     search.value = '';
+    filteredFruits = [];
     _renderElements();
   }
 
   function _searchFruits(event) {
-    console.log('aaasdasd')
     event.preventDefault();
+    filteredFruits = [];
     inputValue = event.target.value;
     const item = event.target.value.toLowerCase();
-    filterFruits = fruits.filter((filterFruit) => {
+    standardFruits = fruits.filter((filterFruit) => {
       return filterFruit.name.toLowerCase().includes(item)
     });
   }
@@ -215,12 +215,17 @@
 </div>
 <div id="list">
     <ul class="list">
-        {(console.log('WWWWWWWW', [...filterFruits]))}
-        {#each filterFruits as item, index}
+        {#if filteredFruits.length === 0}
+            {#each standardFruits as item, index}
+                <JkListItem name={item.name} index={index} />
+            {/each} 
+        {:else}
+            {#each filteredFruits as item, index}
             <JkListItem name={item.name} index={index} />
-        {/each}    
+            {/each}  
+        {/if}      
     </ul>
-    {#if filterFruits.length === 0}
+    {#if standardFruits.length === 0}
         <div id="noItems">
             <p>No records found for the phrases: <strong> {inputValue} </strong></p>
         </div>
