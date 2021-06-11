@@ -176,9 +176,9 @@
         .list {
             column-count: 3;
         }
-        }
+    }
 
-        @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
         #filters {
             display: block;
             max-width: 100%;
